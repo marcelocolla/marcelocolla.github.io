@@ -1,0 +1,14 @@
+
+
+
+
+.widget-socialize { margin:2em 0 0; text-align:center; }
+.widget-socialize .social-item { display:inline-block; }
+.widget-socialize .social-item a { width:24px; height:24px; display:block; background-color:palette(yellow, dark); padding:1em; color:palette(dark); outline: 2px solid transparent; @include transition; }
+.widget-socialize .social-item a::before { content:""; @include sprite(24px); vertical-align:top; }
+.widget-socialize .social-item a.github::before { background-position:0 0; }
+.widget-socialize .social-item a.twitter::before { background-position:-34px 0; }
+.widget-socialize .social-item a.facebook::before { background-position:-68px 0; }
+
+.widget-socialize .social-item a:focus,
+.widget-socialize .social-item a:hover { background-color: transparent; outline-color: palette(white); }

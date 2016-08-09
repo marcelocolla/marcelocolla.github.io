@@ -1,0 +1,50 @@
+
+
+
+#header { background-color:palette(dark); position:relative; z-index:99; padding:2.8em 2%; @include cf; text-align: center; @include css3-prefix(background, linear-gradient(90deg, #485563 10%, #29323c 90%)); }
+#header .navbar-header { display:block; }
+#header .site-title,
+#header .site-title a { color:palette(yellow); display:block; @include transition; @include cf; @include opacity(1); }
+#header .site-title a { text-decoration:none; }
+#header .site-description { font-size:1em; color: #A5A5A5; }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Menu
+ */
+#main-navigation { position:relative; z-index:1; }
+#main-navigation .navbar-nav { margin:0; }
+#main-navigation .navbar-toggle { display:none; }
+#main-navigation .menu-item { display:inline-block; }
+#main-navigation a { padding:1em; display:block; font-size:1.5em; color:palette(white); }
+#main-navigation a:hover { color:palette(yellow); }
+
+
+
+
+
+@media only screen and (max-width:480px){
+	#header .site-title { font-size: 2.6em; }
+	#header .site-description { text-transform: uppercase; }
+}
+@media only screen and (min-width:680px){
+
+	#main-navigation { float:right; }
+
+}
+
+@media only screen and (min-width:1080px){
+
+    #header { padding-top: 6em; padding-bottom: 6em; }
+
+}
