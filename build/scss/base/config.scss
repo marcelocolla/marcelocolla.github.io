@@ -1,0 +1,65 @@
+
+
+$max_width: 1334px; // Largura maxima dos blocos
+$lineHeight: 20px;
+$radius: 8px;
+
+
+
+
+/* 
+ * Fonts
+ */
+$fontDefault: 'Campton-Book', Helvetica, Tahoma, Arial, sans-serif;
+$fontBold: 'Campton-SemiBold', Helvetica, Tahoma, Arial, sans-serif;
+
+
+
+
+/* 
+ * Border Light
+ */
+$borderColor: #c0c0c0;
+
+
+
+/* 
+ * Theme palettes
+ */
+$palettes: (
+    white: (
+        base:  #fff,
+        light: #eee,
+        dark: #ccc
+    ),
+    grey: (
+        base:  rgb(40,40,40),
+        light: rgb(65,65,65),
+        dark:  rgb(15,15,15)
+    ),
+    dark: (
+        base:  #191E24,
+        light: #444,
+        dark:  #2F3942
+    ),
+    red: (
+        base:  #FF043B,
+        light: #FF043B,
+        dark:  #FF043B
+    ),
+    yellow: (
+        base:  #EBCD91,
+        light: #cfb87f,
+        dark:  #c9a866
+    ),
+    vinho: (
+        base:  #534657,
+        light: #816e87,
+        dark:  #332b35,
+    )
+);
+
+// Palette function (Ex.: color:palette(purple); )
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}

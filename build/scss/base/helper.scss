@@ -1,0 +1,86 @@
+
+
+
+/**
+ * Horizontally centers block elements
+ * Ex: .foo { @include center-block; }
+ **/
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*
+ * Sprite
+ */
+%sprite { background:transparent url(../img/sprite.png) no-repeat; }
+@mixin sprite($width:24px, $height:$width){
+    @extend %sprite; width:$width; height:$height; display:inline-block; vertical-align:middle;
+}
+
+
+/**
+ * Horizontally and vertically centers block elements
+ * Ex: .foo { @include center-block; }
+ **/
+@mixin center-both {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform( translate(-50%, -50%) );
+}
+
+
+
+/**
+ * Create circle
+ * Ex: .circle { @include circle(200px, #999); }
+ **/
+@mixin circle($width, $color:transparent) {
+    width: $width;
+    height: $width;
+    display:inline-block;
+    background:$color;
+    @include border-radius($width);
+}
+
+
+
+/*
+ * Vertical align
+ */
+%align-middle { content:''; display:inline-block; height:100%; vertical-align:middle; margin-right:-0.25em; /* Adjusts for spacing */ }
+@mixin align-middle ($obj, $tag:true){
+
+    white-space:nowrap;
+
+    &:before { @extend %align-middle; }
+    @if ($tag){
+      #{$obj} { display:inline-block; vertical-align:middle; }
+    } @else {
+      .#{$obj} { display:inline-block; vertical-align:middle; }
+    }
+
+}
+
+
+/* FILTER */
+@mixin filter($filter-type:grayscale, $filter-amount:100%) {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'#{$filter-type}\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>##{$filter-type}");
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+
+@mixin placeholder {
+    &.placeholder                {@content};
+    &::-webkit-input-placeholder {@content};
+    &:-moz-placeholder           {@content};
+    &::-moz-placeholder          {@content};
+    &:-ms-input-placeholder      {@content};
+}

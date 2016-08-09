@@ -1,0 +1,57 @@
+/**
+*
+* Typography
+*
+**/
+.regular { font-family:$fontDefault; }
+.bold { font-family:$fontDefault; }
+
+
+
+
+
+
+
+// Definitions
+body { font-family:$fontDefault; font-size:16px; color:#686868; font-weight:normal; }
+h1, h2, h3, h4, h5, p { margin:0; }
+
+h1, h2, h3, h4 { font-family:$fontBold; font-weight:normal; }
+h1, h2 { font-size:3em; }
+h3 { font-size:1.69em; }
+h4 { font-size:1.25em; }
+h5 { font-size:1.1em; font-weight:normal; }
+h6 { font-size:1.07em; font-weight:normal; }
+
+
+/* Link midia */
+a { color:palette(dark); text-decoration:none; }
+
+
+
+
+/* 
+ * Font-face
+ */
+
+@font-face {
+	font-family: 'Campton-Book';
+	src: url('../fonts/Campton-Book.eot?#iefix') format('embedded-opentype'), 
+		 url('../fonts/Campton-Book.otf')  format('opentype'),
+	     url('../fonts/Campton-Book.woff') format('woff'), 
+	     url('../fonts/Campton-Book.ttf')  format('truetype'), 
+	     url('../fonts/Campton-Book.svg#Campton-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Campton-SemiBold';
+	src: url('../fonts/Campton-SemiBold.eot?#iefix') format('embedded-opentype'), 
+		 url('../fonts/Campton-SemiBold.otf')  format('opentype'),
+	     url('../fonts/Campton-SemiBold.woff') format('woff'), 
+	     url('../fonts/Campton-SemiBold.ttf')  format('truetype'), 
+	     url('../fonts/Campton-SemiBold.svg#Campton-SemiBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
